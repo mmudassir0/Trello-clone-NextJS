@@ -17,3 +17,7 @@ model Board{
   id String @id @default(uuid())
   title String
 }
+model mydata{
+  id String @id @default(uuid())
+  title String
+}
