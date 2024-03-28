@@ -8,10 +8,10 @@ const CreateBoard = z.object({
   title: z.string().min(3, { message: "minimum 3 Letter required" }),
 });
 export type State = {
+  message?: string | null;
   errors?: {
     title?: string[];
   };
-  message?: string | null;
 };
 export async function create(prevState: State, formData: FormData) {
   const validatedField = CreateBoard.safeParse({
@@ -30,7 +30,7 @@ export async function create(prevState: State, formData: FormData) {
       data: { title },
     });
   } catch (error) {
-    return "database error";
+    return { message: "database error" };
   }
   revalidatePath("/organization/org_2eCLN7EeOnOPQaz7fwkrfSdUZf3");
   redirect("/organization/org_2eCLN7EeOnOPQaz7fwkrfSdUZf3");
