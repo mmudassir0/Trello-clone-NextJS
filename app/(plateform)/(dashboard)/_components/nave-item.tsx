@@ -93,6 +93,7 @@ const Navitem = ({
             variant={"ghost"}
           >
             {route.icon}
+            {route.label}
           </Button>
         ))}
       </AccordionContent>
