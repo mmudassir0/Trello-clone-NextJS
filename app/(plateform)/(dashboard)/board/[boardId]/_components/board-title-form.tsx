@@ -13,10 +13,8 @@ interface BoardTitleFormProps {
   data: Board;
 }
 export const BoardTitleForm = ({ data }: BoardTitleFormProps) => {
-  console.log(data, "data");
   const { execute } = useAction(updateBorad, {
     onSuccess: (data) => {
-      console.log(data);
       toast.success(`Board ${data.title} Updated`);
       setTitle(data.title);
       disableEditing();
@@ -50,7 +48,6 @@ export const BoardTitleForm = ({ data }: BoardTitleFormProps) => {
       id: data.id,
       title,
     });
-    console.log("submitted");
   };
 
   const onBlur = () => {
