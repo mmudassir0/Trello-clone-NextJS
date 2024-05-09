@@ -9,6 +9,7 @@ import { error } from "console";
 
 interface FormTextareaProps {
   id: string;
+  name?: string;
   label?: string;
   placeholder?: string;
   required?: boolean;
@@ -25,6 +26,7 @@ export const FormTextarea = forwardRef<HTMLTextAreaElement, FormTextareaProps>(
   (
     {
       id,
+      name,
       label,
       placeholder,
       required,
@@ -56,6 +58,7 @@ export const FormTextarea = forwardRef<HTMLTextAreaElement, FormTextareaProps>(
             onClick={onClick}
             id={id}
             ref={ref}
+            name={name}
             placeholder={placeholder}
             required={required}
             disabled={pending || disabled}
